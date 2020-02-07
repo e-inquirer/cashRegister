@@ -22,10 +22,10 @@ class TestCashRegister(unittest.TestCase):
         self.assertRaises(ValueError, cashRegister.checkCashRegister, 123, 567, [])
         self.assertRaises(ValueError, cashRegister.checkCashRegister, -123, -567, [])
         self.assertRaises(ValueError, cashRegister.checkCashRegister, "abc", "def", [])
-        self.assertRaises(ValueError, cashRegister.checkCashRegister, 5000)
+#        self.assertRaises(ValueError, cashRegister.checkCashRegister, 5000)
 
-#if __name__ == '__main__':
-#    unittest.main()
+if __name__ == '__main__':
+    unittest.main()
     
-    change = cashRegister.checkCashRegister(10, 100, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 200], ["ONE HUNDRED", 0]])
-    print(change)
+#    change = cashRegister.checkCashRegister(10, 100, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 200], ["ONE HUNDRED", 0]])
+#    print(change)

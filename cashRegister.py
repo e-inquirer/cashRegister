@@ -6,17 +6,22 @@ denomArray = [["ONE HUNDRED", 100.00], ["TWENTY", 20.00], ["TEN", 10.00], ["FIVE
 def checkCashRegister(price, cash, cashInDrawer):
 
 #    cashInDrawer = cashInDrawer.reverse()
-    cashInDrawer = cashInDrawer[::-1]
-    change = cash - price
-    changeInDenominations = []
-    totalCashInDrawer = 0
+
+    if not isArray(cashInDrawer):
+        raise ValueError('Cash in Drawer is formatted incorrectly')
+    else:
+        cashInDrawer = cashInDrawer[::-1]
 
     if not isFloat(price, cash) or not greaterThanZero(price, cash):
         raise ValueError('Please enter a valid price and cash value greater than zero')
-    
-    if not isArray(cashInDrawer):
-        raise ValueError('Cash in Drawer is formatted incorrectly')
-    
+    else:
+        change = cash - price
+
+        changeInDenominations = []
+        totalCashInDrawer = 0
+
+    if (price is None) or (cash is None) or (cashInDrawer is None):
+        raise ValueError('Please enter (price, cash, and cashInDrawer)')
     else:
         for index in range(9):
             totalCashInDrawer += cashInDrawer[index][1]
